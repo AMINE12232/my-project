@@ -1,0 +1,1251 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body onload="(function (id) {     setSelectedId(id); scrollToId(id); }(&quot;2339827093072&quot;));">
+
+ 
+
+<div id="2339827093072" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Data Table <span class="timestamp">Sat Sep 07 24, 12:41:24</span></h1><div class="content">
+<ul><b>Data instances:</b> 467<br><b>Features:</b> 3<br><b>Meta attributes:</b> 3<br><b>Target:</b> Class 'Sentiment'<br></ul><table>
+<tbody><tr><th></th><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Sentiment
+</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Location
+</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">OriginalTweet
+True</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Sentiment(Tree)
+</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">UserName
+</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">ScreenName
+</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">TweetAt
+</th>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">1</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NYC</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">TRENDING: New Yorkers encounter empty supermarket shelves (pictured, Wegmans in Brooklyn), sold-out online grocers (FoodKick, MaxDelivery) as #coronavirus-fearing shoppers stock up https://t.co/Gr76pcrLWh https://t.co/ivMKMsqdT1</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">1</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44953</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">02-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">2</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">HI TWITTER! I am a pharmacist. I sell hand sanitizer for a living! Or I do when any exists. Like masks, it is sold the fuck out everywhere. SHOULD YOU BE WORRIED? No. Use soap. SHOULD YOU VISIT TWENTY PHARMACIES LOOKING FOR THE LAST BOTTLE? No. Pharmacies are full of sick people.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">9</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44961</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">04-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">3</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">New Delhi</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Beware of counterfeits trying to sell fake masks at cheap prices. Let's defeat coronavirus threat, #Covid_19 collectively. #BeSafe #BeACascader #CoronavirusReachesDelhi 
+
+#coronavirusindia 
+
+
+
+https://t.co/2Ikkmimj4f https://t.co/RB9rtt7Nkc</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">12</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44964</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">04-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">4</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">USA, PA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Panic food buying in Germany due to #coronavirus has begun.  But the #organic is left behind! #Hamsterkauf
+
+
+
+Panic buying is called "Hamster purchases"(Hamsterkäufe) in German, taken from the way Hamsters stuff their cheeks with food.  
+
+
+
+https://t.co/aYQtLLGW1m</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">13</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44965</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">04-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">5</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bengaluru</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">#AirSewa 
+
+
+
+@flyspicejet is not providing #webchecin customers free seats.
+
+
+
+Passengers are forced to choose paid seats as free seats are made available only at airport counter. 
+
+
+
+This should be stopped as its discriminatory and against travellers rights 
+
+
+
+@HardeepSPuri @MoCA_GoI</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">16</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44968</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">04-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">6</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Canada</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Canada's&nbsp;oilpatch is bracing for the impact of plunging crude prices after&nbsp;OPEC and its allies failed to reach a deal aimed at cutting production as economies slow because&nbsp;of the novel #coronavirus. The fool @Jkenney based his budget on hired oil prices 
+
+
+
+https://t.co/fDCpQPvPuo</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">25</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44977</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">07-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">7</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">USA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Is this effective?
+
+Is it necessary?
+
+Or is it just optics?
+
+Scare tactics?
+
+For the American consumer?
+
+For US MSM to use?
+
+If optics, What is the intended effect?
+
+Fear?
+
+Crash US Market-&gt;panic-&gt;elect Biden
+
+
+
+#Qanon #coronavirus https://t.co/H48ZMfuAme</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">33</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44985</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">08-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">8</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Toronto, Ontario</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">IMHO Russia's rug pull on oil prices is designed to end the dollar as the global reserve currency. How? Corp debt collapse, led by high yield and fracking, compounded by COVID-19, will mean Fed and US Govt respond with #MMT. Ciao dollar. Alt is collapse. Got #Gold or #Silver yet?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">34</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44986</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">08-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">9</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Dont ask for freedom, take it.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Remember, with all the media deflection stories about bog rolls, panic-buying, food shortages, Covid-19, Irish bridges etc etc.
+
+
+
+We've still got Brexit, Austerity, poverty, a crashing economy &amp; the worst UK Govt in living memory. 
+
+
+
+All depressing stuff &amp; it aint gonna end well.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">36</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">44988</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">08-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">10</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Washington, DC</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The oil prices dipping has absolutely nothing to do with #COVID2019 it has everything to do with #OPEC talks collapsing and Saudi feuding with Russia. Celebrate and calm the hell down.. weirdos.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">48</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45000</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">09-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">11</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">United States</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Global stocks plummeted today due to fear surrounding #COVID2019 and falling oil prices, which saw the biggest one-day drop since the 1991 Gulf War.
+
+
+
+Let's look at how the major stock indices have been reacting to the news, based on their closing values. https://t.co/fV7IehqaDo</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">49</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45001</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">09-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">12</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">#NoNazis?? kaspum zaháv</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The beginning of a  global recession!
+
+
+
+#Coronavirus damaging health crisis?
+
+#oil prices falling down?
+
+US stocks falling down?
+
+7% drop this morning &amp; trading halt?
+
+#migration crisis at the EU borders 
+
+#housingCrisis &amp; skyrocketing rents. Tenants are losing 50% of income?
+
+#Q*</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">50</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45002</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">09-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">13</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Australia</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">@7NewsSydney @ScottMorrisonMP Some Factors have bought on the recession 1)Ignoring per-capita recession, 2)wage growth stagnant 3)Consumer debt levels are through the roof 4) casualized work! These changes in the economy are driven by government not #co</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">51</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45003</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">09-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">14</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">earth</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">@thehill Americans need to take it upon themselves to help avoid contracting covid-19.
+
+Prep to self quarantine for 2 wks.
+
+Stop unnecessary travel or crowd gatherings.
+
+Talk to your employer about how to proceed w/o harm to your career.
+
+Plan for sch</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">55</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45007</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">09-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">15</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Dallas, USA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">4- Russia LNG will also suffer. The irony is, spot LNG prices were already at a record low because of the #Coronavirus and the declaration of force majeure by Chinese companies. 
+
+
+
+Contracted LNG became the only way to make money until oil prices collapsed. It is a big hit https://t.co/ksFQ4uzqAn</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">61</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45013</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">10-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">16</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Bowling Green, KY</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">#BreakingNews #terrorists have watched closely as the #coronavirus spins its web. They now know what Americans value most. Wiping their ass! Citizens rush to buy toilet paper but neglect to stock up on food! Terrorists are holding our #toiletpaper  factories hostage! Film at 11! https://t.co/7maYfTGxJA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">62</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45014</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">10-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">17</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Lower #Oil prices, lower #InterestRate, and some sort of fiscal #stimulus is great, but the consumer isn't the problem. The problem is fear of #coronavirus and fear of being quarantined for 14 days. That's why people stopped traveling. Not because of interest rates or taxes.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">64</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45016</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">10-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">18</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Kjipuktuk/Halifax</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">My genuine concern around #COVID2019 are folks who may have to isolate, but work low wage/hourly pay jobs - folks who are barely getting by, who DONT get paid sick days. Folks who cant stock up on weeks worth of food. Folks who cant NOT work. 
+
+
+
+The working poor will suffer most</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">76</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45028</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">10-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">19</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Ph Guillermo Munt</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The #Coronavirus crisis will speed up the technological revolution as schools, health services, shopping and work will go online at an even faster pace than before. See "The Robots are Coming": https://t.co/2bKMJcaYa5 
+
+@vintagebooks https://t.co/EjYZ9rabTu</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">125</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45077</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">20</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Ph Guillermo Munt</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The #Coronavirus crisis will speed up the technological revolution as schools, health services, shopping and work will go online at an even faster pace than before. See "The Robots are Coming", Page 234: https://t.co/Yck5Zmfa4j @vintagebooks</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">126</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45078</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">21</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Ok, so #COVID2019 made flights cheap, emptied busy tourist destinations in Europe, panicked the hell out of the stock markets so now #covid19UK when will you lower the house prices?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">133</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45085</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">22</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">New York, NY</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">A fight broke out in an Australian supermarket over the #toiletpapercrisis, which led to police having to intervene. 
+
+
+
+A woman asked for just one packet from a second woman with at least four large packets in her cart.
+
+
+
+https://t.co/j5kFdoFAgN</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">135</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45087</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">23</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Everybody stocking up on toilet paper, and Im like WTH? Id rather stock up on extra food. Without it, the other becomes useless. ??? #coronavirus</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">185</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45137</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">24</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Melbourne, Australia</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Woolworths has stated that customers who bought monstrous amounts of toilet paper, pasta and canned food will be unable to return their excess purchases.
+
+
+
+Panic buyer regret? Serves them right.
+
+
+
+https://t.co/JzJZ5YXPVS #auspol #coronavirus #coronavirusau</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">211</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45163</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">25</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Just went to the grocery store to NOT buy bleach, cleaners or toilet paper, but to buy bacon and steak. While there, saw three people with masks on. ?? Maybe the THREE (3) out of a state of 11,690,000 in Ohio who have the very SCARY #coronavirus. SHUT DOWN GROCERY STORES!!!</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">217</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45169</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">26</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Windsor Heights, IA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Be on the lookout for price gouging and other scams related to the COVID-19 virus. Learn more about how to spot them and how to file related consumer complaints at the link below. 
+
+
+
+https://t.co/CzzCCNzA1P</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">230</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45182</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">27</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">India</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">We are disappointed that some sellers are attempting to artificially raise prices on basic need products during a global health crisis" @amazonIN
+
+@Flipkart @Grofers @NetMeds
+
+@pharmeasyapp 
+
+#Corona #CoronaVirusUpdate
+
+#COVID2019 #handsanitizer
+
+https://t.co/LPybjsqulX</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">231</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45183</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">28</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Washington, USA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">dangerous dems causing chaos over covid-19.  I shake hands, hug, share bites of food, watch ONLY Fox and Friends.  There is no problem in US.  Fake media is making me look bad, they crashed the stock market, all because of my beautifully perfect response.  No test kits = no + https://t.co/lP2lWU4fi0</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">246</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45198</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">29</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">San Francisco, California</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">5 stages of COVID-19
+
+
+
+denial - it's just a bad flu
+
+anger - why is everyone buying all the toilet paper?
+
+bargaining - if i start doing emergen-c shots now i won't get it
+
+depression - OMG we're all going to die
+
+acceptance - i'll stock up on TP/food/theraflu and get this over with</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">260</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45212</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">30</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">I went to Sainsburys this afternoon and saw many empty shelves. I understand people are acting to the Covid-19 pandemic &amp; stocking up, but I feel terribly sorry/? for the elders who dont/are not able to do online shopping &amp;
+
+are struggling to get the essential daily supplies.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">263</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45215</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">31</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">#Jamaica, sorry to burst your bubble but #Lysol cannot manage this strain of #coronavirus. The one on the Lysol tin is an older version of #coronavirus. #COVID19 was built to defeat #Lysol. Stop wasting money on #Lysol &amp; buy soap &amp; alcohol &amp; stock up on food &amp; medication.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">274</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45226</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">11-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">32</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Westeros</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Supermarket in London this evening. No toilet papers, no pasta, no rice, no bread, no chicken and red meat. People are disgusting! #Covid_19 #london #uk https://t.co/OIYk4n20CN</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">289</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45241</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">33</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Ontario, Canada</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">I got people on Facebook currently selling toilet paper on bidding groups for outrages prices. This world is disgusting and selfish. #ashamed  #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">290</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45242</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">34</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">West Midlands, England</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Just a thought, but when your in the supermarket, panic buying, maybe put a few extra items in the Food Bank bit. After all, these people will need the items more than ever ?
+
+Seriously, noodles are 14p, cereal is 60p. It's hardly going to break the bank.
+
+#Coronavirus #BeKind https://t.co/hhdNKPgPVv</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">302</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45254</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">35</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Dublin</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Scenes outside my local supermarket as the country goes into lockdown from 6pm today. Don't be a silly twat and bulk buy stuff. There's plenty for everyone and consider more vulnerable people and people who have not been paid yet. #CoronavirusPandemic #lockdown #Covid_19 https://t.co/gsSUHr8GAE</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">303</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45255</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">36</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Nottingham, England</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">This #coronavirus #panickbuyinguk is bloody ridiculous, I cant get painkillers for knee pain Im suffering, the foods I buy for my #autistic child who has food issues are out of stock, how do I tell him he cant have that without causing meltdown You people are pricks!!</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">307</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45259</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">37</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The fact that I probably will not have my work close or cancel over COVID-19 is kinda stupid.. I swear to god if I get this CUZ OF WORK, I am fucking suing.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">308</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45260</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">38</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Moon</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Prepare yourself for when the #Covid_19 panic is ovee and everything has settled.
+
+Do no stock up on toilet paper.
+
+Stock up on Bitcoin and stocks. 
+
+Sell back at inflated prices later on.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">309</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45261</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">39</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Gemini under the sun</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NO #toiletpaper #handsanitizer #disinfectant wipes  at #HomeDepot or #Walmart !?Got some yesterday from the grocery store but cause ppl R going nuts &amp; #stockpiling there's not enough 4the rest of us "Normals"? #CoronavirusPandemic #CoronaOutbreak #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">318</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45270</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">40</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NY/FL USA ?GRATEFUL</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">All Americans should be concerned w/ stock markets. 
+
+LIQUIDITY &amp; CREDIT. 
+
+Lack of liquidity can cause a credit crisis &amp; everything will freeze. 
+
+-No medicine 
+
+-No food 
+
+-No supplies 
+
+-Empty stores. 
+
+
+
+#CoronaVirusUpdate #coronavirus 
+
+@realDonaldTrump @SpeakerPelosi</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">341</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45293</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">41</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Ireland</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">who can't afford to stock up and elderly people are now stuck while you have 7 packets of toilet roll, 50 soaps and food rotting in the fridge. Apparently there's been war in some shops in Dublin, people making off with entire shelves and cans of beans thrown. Cop on. #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">343</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45295</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">42</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Denver, CO</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Genuinely don't understand the point of stockpiling toilet paper. That is literally the last thing I would stockpile. Worst case scenario you just use a towel. Food is what you should be concerned about. ????</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">398</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45350</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">43</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Saskatchewan, Canada</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Welp. Im panicking. Not about the coronavirus. Panicked that stores wont have food or Tylenol for the kids etc. or that prices will be obscene. Gov needs to protect us from being gouged during this crisis. @PremierScottMoe @JustinTrudeau @SKGov #skpoli #Covid_19 #coronavirus</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">399</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45351</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">44</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">ORD</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Convenience Retailers #CoronaVirusUpdates #COVID2019 Can #Lysol and #Clorox products kill the #coronavirus? The answer is ... complicated https://t.co/OVX1lM8JRD.  FoodService, Retail #cleanculture #Clean Convenience Store Training https://t.co/xxfiHCBtWJ</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">400</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45352</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">45</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Hornby Island, Pacific rim</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">I've been to #Costco to grocery shop, it's armageddon, it's panic buying &amp; trolley wars, yet the mood of the store was sedate, no laughter, no talking, just people filling their trolley's to the brim. They had 400 people waiting at the doors this morning, a new record. #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">403</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45355</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">46</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Toronto, GTA, Mississauga, ON</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">If you have a #retail store you need a #cleaning schedule. At #cannarelief #Mississauga we disinfect the payment machines, counters, door handles, several times per day and spray with #Lysol. No one comes to work ill. We have 4 #handsanitizers instore. The new normal. #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">405</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45357</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">47</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">There was no meat at my local supermarket yesterday and very few packages of pasta. At the end of the day Portugal should be ashamed! This is shameful and this needs to be shown. Again, it's important to be safe from the #Covid_19, but don't panic, that will get us nowhere.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">409</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45361</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">48</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">London / Middlesex</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">This #CoronavirusPandemic is having a drastic effect on the sick and elderly. No-one wants to visit them. The isolated, lonely &amp; vulnerable are becoming even more so, &amp; they are mostly excluded from online shopping, advice, support and information.
+
+#ageuk #loneliness #CoronaVirus https://t.co/8JPtgt3FcM</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">423</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45375</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">49</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Here's a novel idea... there is panic that the healthcare system, paid family leave and systems for food security can't handle the influx that's about to happen, but what if we had already had those in place?Think of the amount of fear that would be decreased. #Covid_19 https://t.co/M9bqTgtSXV</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">437</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45389</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">50</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">UK</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">To those of us who find a stocked supermarket &amp; can afford it: please buy dried &amp; tinned food &amp; long life milk to put in the foodbank basket. Foodbanks &amp; their clients are suffering. Hoarding leads to the greedy taking food from the poorest.#Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">438</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45390</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">51</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Nobody in the food industry is talking about stock outages or shortages. There will be food in the shops. No need to panic buy. #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">440</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45392</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">52</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Trump's bumbling teleprompter reading did not instill confidence. The American people are panicking. Grocery store was MUCH busier than normal for a Thursday afternoon. Cashier said it had been going on all day. Gas station busy. It will only get worse. #TrumpResign #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">441</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45393</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">53</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The Burrow, The Woods</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Hi everyone. If you are panic buying and ending up with more than you need, you should think about returning it. Many of us haven't been so selfish and now can't buy toilet roll or dry food at all #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">443</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45395</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">54</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">INCREIBLE!!!! UNBELIEVABLE!!!! The S&amp;P 500 and Dow fell sharply again as crude-oil prices dropped and investors pour into U.S. government bonds https://t.co/t65yanR9Tk vía @WSJ #COVID_19 #CoronavirusPandemic #COVD19 March Madness #markets</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">477</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45429</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">55</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Washington, DC</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Have been talking to lots of Trump supporters across the country these last couple of days, and the disdain for and distrust of the media right now is worse than I've seen at any point throughout this presidency.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">479</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45431</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">56</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">London, England</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">In the current climate that is absolute stockpiling CHAOS, foodbanks are rapidly running out of supplies. 
+
+
+
+Just phoned my local food bank to see what they need so I can pop some bits on my online order.
+
+
+
+Shopping list below if youre able to do the same ?? #COVID19 #coronavirus https://t.co/s5omokREdQ</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">484</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45436</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">57</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Pittsburgh, PA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">People are asking why everyone is panicked and buying toilet paper. The answer is that everyone is panicked and buying toilet paper, because everyone else is panicked and buying toilet paper. This is called consumer hysteria.
+
+#CoronavirusPandemic #coronavirus #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">487</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45439</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">58</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Earth / Tierra</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">We should demand food systems be socialized in such a way that pathogens this dangerous are kept from emerging in the first place. https://t.co/CAr20DyKt9</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">515</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45467</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">59</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Ireland</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">It saddens me to see that people are so stupid that against the advice of gatherings, packed out stores &amp; emptied shelves instead of listening to balanced informed advice to limit travel &amp; interactions &amp; #Covid_19 will pass.
+
+
+
+'No need for panic buying': https://t.co/Q0ZBGsS0rP</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">517</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45469</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">60</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Wicklow, Ireland</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Getting some crazy WhatsApp about supermarket crazyness. Relax folks, no need for hysteria. They will be restocked. Panic is the last thing we need.....
+
+#coronavirus
+
+#Covid_19 https://t.co/NF82y5yCUJ</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">538</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45490</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">61</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Cleveland, OH</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Between cuts to SNAP and COVID-19, we expect a large increase in demand for food in the coming weeks. Fuel our fight against hunger and food waste at https://t.co/E5ybQIDXwh ? https://t.co/nubL1BhbId</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">541</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45493</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">62</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The moon</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">@csharp52287690 Let's wait and see, COVID-19 hasn't peaked in the USA yet. On our show last week we predicted the government might force the entire country to self-isolate. This likely will cause a recession and prices to go lower. #COVID2019</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">547</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45499</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">63</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Tacoma, WA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Over the last week #Covid_19 has had no affect on the #Tacoma real estate market. However I expect that to change soon as consumer sentiment is a major factor for the RE market and is taking a beating with stocks. 
+
+#realestate</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">549</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45501</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">64</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Co. Clare, Ireland</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Police ???? in the supermarkes ! Hysteria #Covid_19 WATCH: Chaos in Limerick city supermarket as coronavirus panic sets in https://t.co/SDPnSh1PRF</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">551</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45503</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">65</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Brum</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">italy has more cases of the covid 19 than china but everyone stock piled on pasta and no ones ordered chinese food. i smell racism</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">561</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45513</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">66</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Atlanta, GA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">COVID-19 is scary for me because I cant afford to stock up on food or basic necessities. I struggled to pay a $50 bill on Monday and that was a hard enough without whats going on around me.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">566</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45518</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">67</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">United States</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">@marwilliamson .@marwilliamson Unfortunately it's #CoronaGreed and it's going to get worse before it gets better. Trump wants to prop up gas and oil financially even though it's Saudi Arabia and Russia manipulating prices. #Covid_19 #CoronaOutbreak</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">569</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45521</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">68</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">It is completely racist and ignorant to avoid Chinese restaurants because of #Covid_19?
+
+PR: https://t.co/xW7dyTBQbB</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">581</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45533</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">69</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Cleveland, OH</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">My question, will Ohio ask feds for permission to suspend discontinuance of #SNAP or #Medicaid until #coronavirus crisis has passed + what can Ohio do to expedite processing new applications for these programs as people lose jobs #SocialDistancing</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">584</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45536</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">70</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Chicago, IL</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">@LuciferThought @_andreiaaaa My partner takes immunosuppressive medication, so shes in a high-risk pool of people. I did stock up on food, mostly to make her feel less nervous about the chaos Trump has created over Covid 19.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">586</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45538</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">71</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Brooklyn, NY</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">The biopolitics of COVID-19: $1.5 trillion for the stock market; no testing, paid sick leave, food aid, eviction bans, enhanced unemployment insurance, or any other measure to help everyone else</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">624</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45576</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">72</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Vancouver, WA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">@JosephForecast Generally, I never want more than a dusting.  But -- a) since going out is something WA people seem to not be allowed to do (that's what it feels like, anyway), and b) if snow will kill the covid-19 virus, I say, bring it on.  But, give me</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">642</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45594</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">73</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Russian Crypto City</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">In the wake of the global turmoil &amp; the crisis of the #COVID_19, financial markets, especially bitcoin prices have fallen #sharply. Apps such as #WhatsApp &amp; #Linkup with associated #Blockchain wallet can be used as balance weight for #BTC.
+
+@linkupfounders 
+
+@LinkupFr 
+
+@LinkupRus https://t.co/J7QUgut0di</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">645</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45597</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">74</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Atlanta, GA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Stock up on canned food, bottled water, matches, flashlights, and other supplies NOW.
+
+
+
+Contagion will only get worse. They will close down stores. #Coronavirus #COVID19 #PublicHealth</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">659</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45611</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">75</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Chicago, IL</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">pls keep calm as we navigate this crisis. were all scared and youre not helping anyone by pushing people at the grocery store, ramming your cart with all the food you can fit, and leaving nothing for the rest. we either survive this together or our humanity doesnt. #coronavirus</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">663</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45615</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">76</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">United States</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Sadly true. We allowed our domestic manufacturing capacity to atrophy because it was cheaper &amp; more efficient to have it made abroad. #Covid_19 is exposing this in the medical field. But this dangerous supply chain deficiency extends to dozens of other critical industries. https://t.co/eSl9xUTAEi</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">666</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45618</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">77</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Copenhagen, Denmark</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">1/ All this looks like a post-apocalyptic B-Rated movie where it starts with pieces of news, panic, fight over food and resources and then screen coes blank. It writes, 1 year later. A deserted city with empty cars, crashed and piled up trash...
+
+#Covid_19 #CoronavirusPandemic</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">683</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45635</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">78</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Nairobi, Kenya</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Airlines: Plane ticket prices are dropping because of the coronavirus.&nbsp;
+
+
+
+My cheap ass making bookings coz if I die I better die in Bali 
+
+#CoronavirusPandemic #Covid_19 https://t.co/MPXjcpcjtG</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">702</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45654</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">79</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">England</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Seeing all these pictures of empty shelves is making me panic a little. Still yet to stock up on food. #CoronavirusPandemic  #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">708</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45660</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">80</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Never Never Land</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NYC Water. IS CVS PRICE GOUGING? IS THEIR MASS PANIC? THIS CITIZEN JOURNALIST IS ON THE CASE. GOING WHERE NO ONE WANTS TO GO... 4.89 FOR A CASE OF WATER IN NYC. ITS GETTING CRAZY. #CoronaVirusUpdate #coronavirus #toiletpaper #COVID19 #toiletpapercrisis #QArmy #QAnon #qanom https://t.co/7ebpjoRR5C</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">710</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45662</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">81</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Rockville, MD</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Shelves empty at my local DC supermarket. Panic buying is on. #Covid_19 #hysteria</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">716</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45668</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">82</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Dublin</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">I am disturbed by the scenes from supermarkets because the people that are most vulnerable from #coronavirus are the very people that cannot get down to the supermarket to clear the shelves! Cop on everyone. Think about who this really killing. #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">719</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45671</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">83</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">By the food.If not,try the bar</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">For a nation that coined #keepcalmandcarryon we seriously need to get a grip.Just back from hoilday.Went to buy food for tonight/tomorrow, and apparently the apocalypse has begun, and the #Covid_19 everyone has turned everyone into flapping, panic-buying morons.</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">720</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45672</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">84</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">North Korea</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Im really tired of tweeting about Covid-19, all you have to know is that we're under a lockdown that they renamed, hope you have enough food for 6 Months.
+
+
+
+And if you survive, even with the martial law, remember, when they say don't panic, you need to panic.
+
+
+
+#COVID2019 #Manila</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">730</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45682</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">85</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">México</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Worst time to be long on consumer discretionary stocks 
+
+#stonks #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">740</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45692</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">86</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Really confused by news reports: do I need to stock up on soap/food/diapers/TP, or is that "panic buying"?  Don't want to be caught without essentials, also don't want to contribute to chaos. #Covid_19 #caronavirususa</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">745</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45697</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">87</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">"If it weren't for the media, we'd just think this was a bad flu season.  This is all their fault" - 65 year old woman in front of me in line at the supermarket.  #TheGreatAwakening #Q #Qanon #Maga #CoronaFlu #covid19 @realDonaldTrump #covid_19 #Disneyland #MarchMadness https://t.co/9HAuzZSrQR</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">754</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45706</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">88</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Cambridge, UK</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">As a Venezuelan , the post-apocalyptic visuals at my local supermarket do trigger some mad PTSD #DejaVu #EmptyShelves #CoronavirusPandemic #Covid_19 https://t.co/zQVY5DCYEl</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">757</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45709</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">89</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Normal, IL</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Forget #panicatthedisco its now insanity! at the grocery store #Covid_19 #CoronavirusPandemic</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">776</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45728</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">90</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Wonderland</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">We can't really blame the panic buyers ! After all we all are humans and we all has the fear of getting qurantine for few weeks and running out of food . #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">814</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45766</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">91</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Airlines: Plane ticket prices are dropping because of the coronavirus.&nbsp;
+
+
+
+My great ass making bookings coz if I die I better die in Madina
+
+#CoronavirusPandemic #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">817</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45769</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">92</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Corona: events with 1000+ people attending are cancelled, schools are closing everywhere
+
+
+
+Me, working at a supermarket, getting in contact with a shit ton of people daily: ??
+
+#Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">823</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45775</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">93</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">San Diego County, Calif</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Could you survive for a month without going to the store? Do you have dry milk in stock? Do you have basic medications for if you get sick? If you dont have a list, start now! #Coronavirus  
+
+Emergency Food List Ideas:
+
+https://t.co/7IFkv5vew8</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">831</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45783</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">94</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">cookstown</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Can't think of any situation that requires me having 100 rolls of toilet roll and that includes the St.Patricks weekend I drank nothing but Guinness for 3 days. Don't be a wanker and stop stock piling stuff you don't need, it's the reason prices are ridulous #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">848</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45800</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">95</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Its unacceptable how prices of masks, sanitizers and alcohol are irrationally high in such a critical and dangerous situation. Something should be done regarding this issue. #????_?????? #??????_????? #Covid_19</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">855</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45807</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">96</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Mystic Marsh, Winter Tundra</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Lidl is total chaos, queues as long as the aisles. The cashier got up to go to the toilet and was met with roars of abuse. When I got to the top I asked how she was and she said I was the first person to ask her that all day. She has been working since 4am. Be a bit sounder lads</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">856</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45808</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">97</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Manila ??</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">NEW VLOG!
+
+
+
+Many people who feared for a possible lockdown in Metro Manila are reportedly panic-buying basic food and household items. 
+
+
+
+But will it help or will only aggravate the COVID-19 situation we are facing now?
+
+
+
+Know what Kuya Daniel says about it:
+
+https://t.co/4Fd0ZiN8Vz</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">858</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45810</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">98</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Where did coronavirus come from, and where will it take us? An interview with Rob Wallace, author of Big Farms Make Big Flu
+
+
+
+https://t.co/Hqp68iu1iN https://t.co/dR4Ys2hCOy</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">882</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45834</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">99</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Baku</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">What's positive about Corona virus:
+
+- helping to fight climate crisis
+
+- stock markets are disrupted
+
+- oil prices are getting lower
+
+- flights cancelled
+
+- more family gatherings
+
+- works can be done via emails and from home
+
+- distance education is working
+
+
+
+Comrade #Covid_19 ?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">884</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45836</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">100</th>
+<td style="color:#000000; background:#a0a0a0; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Pleasantville, USA</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Got back from grocery store... wtf is it with TP and water? Ive literally gone from worrying if im gonna get #Covid_19 to worrying about how im gonna wipe my ass next week ? Scary times. oh well, i have enough hot pockets to last a month ?</td>
+<td style="color:#000000; background:#dcdcc8; text-align:left; vertical-align:middle;">Extremely Negative</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">891</td>
+<td style="color:black; background:transparent; text-align:right; vertical-align:middle;">45843</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">12-03-2020</td>
+</tr><tr><th></th><td colspan="7"><b>+ 367 more</b></td></tr>
+            </tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div></body></html>
